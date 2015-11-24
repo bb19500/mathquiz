@@ -12,13 +12,14 @@ var gameTimer=setTimeout("CountDown()", 1000)}
 else if (time==0)
 {document.math.timer.value="0";
 timesup=1;
-alert('Time\'s Up! Youre Score is:' );
+alert('Time\'s Up! Youre Score is:' ) && alert(document.getElementById("sp").value);
 document.math.firstnum.value="";
 document.math.operator.value="";
 document.math.secondnum.value="";
 document.math.answer.value="";
 //alteri per rezultatin final
-alert(('Time\'s Up! Youre Score is:' ) && (document.getElementById("sp").value));
+
+alert(document.getElementById("sp").value);
 }
 }
 <!--END OF TIMER SCRIPT-->
@@ -111,6 +112,11 @@ getProb();
 }
 document.getElementById("number").value = "";
 }
+var hideKeyboard = function() {
+    document.activeElement.blur();
+    $("input").blur();
+};
+
 function number_write(x)
 {
   var text_box = document.getElementById("number");
@@ -134,3 +140,8 @@ function number_c()
   num /= 10;
   text_box.value = num;
 }
+
+var x = document.getElementById("form_sample");
+var createform = document.createElement('form'); // Create New Element Form
+x.appendChild(createform);
+
