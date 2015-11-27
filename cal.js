@@ -12,21 +12,29 @@ var gameTimer=setTimeout("CountDown()", 1000)}
 else if (time==0)
 {document.math.timer.value="0";
 timesup=1;
-alert('Time\'s Up! Youre Score is:' ) && alert(document.getElementById("sp").value);
+//alert('Time\'s Up! Youre Score is:' );
 document.math.firstnum.value="";
 document.math.operator.value="";
 document.math.secondnum.value="";
 document.math.answer.value="";
-//alteri per rezultatin final
 
-alert(document.getElementById("sp").value);
+var sp = document.getElementById("sp").value;
+alert('Time\'s Up! Youre Score is: ' + sp);
+//saveScore(sp);
+sp [1] = prompt("New score");
+localStorage["sp"] = JSON.stringfy(sp);
+
+var storedscore = JSON.prase(localStorage['sp']);
+} 
 }
-}
+
 <!--END OF TIMER SCRIPT-->
 
 function startgame()
-{if (started!=0)
-{alert('You\'ve Already Started!');}
+{
+  if (started!=0)
+{alert('You\'ve Already Started!');
+}
 else
 {
 started=1;
@@ -93,7 +101,7 @@ else
 var theiranswer=eval(document.math.answer.value);
 var theirpoints=eval(document.math.points.value);
 if (theiranswer==null)
-{alert('Put Your Answer In The Box To The Left Of The Button Labeled \'Dap an\'!');
+{alert('Put Your Answer In The Box  ');
 document.math.answer.select();}
 else
 {
@@ -141,7 +149,39 @@ function number_c()
   text_box.value = num;
 }
 
-var x = document.getElementById("form_sample");
-var createform = document.createElement('form'); // Create New Element Form
-x.appendChild(createform);
+// var x = document.getElementById("form_sample");
+// var createform = document.createElement('form'); // Create New Element Form
+// x.appendChild(createform);
 
+// function saveScore(object){
+//   if(localStorage.getItem('sp'));
+//   array.push(object);
+//   localStorage.setItem("sp", Json.stringfy(array));
+// } else
+// {
+//   var array[i];
+//   array.push(object);
+//   localStorage.setItem("sp", Json.stringfy(array));
+// }
+
+// function showScore(){
+//   $('main-content').empty().append($('.' + 'sp'));
+
+//   if(localStorage.getItem('sp')) {
+//     var arr = JSON.parse(localStorage.getItem('sp'));
+//     arr.sort(function(a,b){
+//       return a.score + b.score;
+
+//     });
+//     var html="";
+//     arr.forEach(function(user,index){
+//       html += '<tr><td>' + (index+1) + '</td>' + 
+//       '<td>' + user.nickname + '</td>' +
+//       '<td>' + user.score + '</td></tr>';
+//     });
+  
+//   $('.sp-content').empty().append(html);
+//  } else {
+//   $('.main-content').empty().append('<h1>No score </h1>')
+//  }
+// };

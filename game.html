@@ -59,6 +59,7 @@ font-size:24px;
 text-align:right;
 }
 </style>
+
 </head>
 <body onload="startgame()">
 <div class="main_panel" align="centre">
@@ -89,7 +90,7 @@ height:20px;" disabled></td>
     </tr>
     <tr>
 
-      <td  colspan="3" align="center"><font color="#0000FF">Corrects</font><font face="Arial, Helvetica, Sans Serif" size="3" color="#0000FF"><b>:</b> </font> <input type="text"  name="points"  size="5"  style="width:50px;
+      <td  colspan="3" align="center"><font color="#0000FF">Corrects</font><font face="Arial, Helvetica, Sans Serif" size="3" color="#0000FF"><b>:</b> </font> <input type="text"  name="points"  size="5"  id="sp" style="width:50px;
 height:20px;" value="0" disabled></td>
     </tr>
     <tr>
@@ -109,11 +110,20 @@ height:20px;" value="0" disabled></td>
 <div class="number_button" onclick="number_clear();">Clr</div>
 <div class="number_button" onclick="number_write(0);">0</div>
 <div class="number_button" onclick="number_c();">C</div>
+<div class="save-score">
+<div class="text-center">
+<!-- 	<div class="form-group">
+<label id='lblScore'></label>
+	</div>
+	<div class="form-group">
+		<label >Please enter your name</label>
+		<input type="text" class="form-control" id="txtNickname" placeholder="Nickname">
+	</div>
+	<button class="">Cancel</button>
+	<button>Save</button> -->
+</div>
 
-	<!--
-    	This script downloaded from www.JavaScriptBank.com
-    	Come to view and download over 2000+ free javascript at www.JavaScriptBank.com
-	-->
+</div>
 
 </body>
 </html>

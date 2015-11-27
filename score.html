@@ -41,24 +41,28 @@ font-size:24px;
 text-align:right;
 }
 </style>
-<script src="form.js"></script> 
+<script type="text/javascript">
+function retrive{
+for ( var i = 0, len = localStorage.length; i < len; ++i ) {
+  console.log( localStorage.getItem( localStorage.key( i ) ) );
+}
+}
+</script>
+
 	<title></title>
 </head>
-<body>
+<body >
 <div class="main_panel" align="centre">
 <table align="center">
   <tr>
     <td colspan="3" align="center"><input type="button" value="Back" class="number_button" onClick="location.href = 'index.html';" style="width:200px;
 height:70px;"></td></tr><tr>
-    </div>
-<div id="form_sample" hidden></div> 
-<script src="form.js"></script>
+    </tr>
+    <ol id="retrive()">
+</ol>
+</table>
 </div>
-
-  </tr>
-  </table>
-  </div>
-  
-
 </body>
+
+
 </html>
