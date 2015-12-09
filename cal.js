@@ -1,7 +1,7 @@
 <!-- Begin
 <!--START OF TIMER SCRIPT-->
 //how much time they get
-var time=5;
+var time=60;
 var timesup=0;
 var started=0;
 function CountDown() {
