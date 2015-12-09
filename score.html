@@ -8,7 +8,9 @@
 {
 width:270px;
 height:550px;
-background-color:#999999;
+/*background-color:#999999;*/
+background-image: url("img/BGMath.gif");
+background-size: contain;
 border-top-right-radius:20px;
 border-top-left-radius:20px;
 border-bottom-right-radius:20px;
@@ -21,7 +23,7 @@ width:70px;
 height:70px;
 margin:10px;
 float:left;
-background-color:#FFFF99;
+background-color:#F0F8FF;
 border-top-right-radius:20px;
 border-top-left-radius:20px;
 border-bottom-right-radius:20px;
@@ -40,29 +42,65 @@ height:30px;
 font-size:24px;
 text-align:right;
 }
+ul {
+    background: #ff9999;
+    padding: 20px;
+}
+
+ol {
+ /*   background: #3399ff;*/
+    padding: 16px;
+}
+
+ul li {
+    background: #ffe5e5;
+    padding: 15px;
+    margin-left: 45px;
+}
+
+ol li {
+    background: #cce5ff;
+    margin: 25px;
 </style>
-<script type="text/javascript">
-function retrive{
-for ( var i = 0, len = localStorage.length; i < len; ++i ) {
-  console.log( localStorage.getItem( localStorage.key( i ) ) );
-}
-}
-</script>
+
 
 	<title></title>
 </head>
-<body >
+<body onload="showScore()">
 <div class="main_panel" align="centre">
 <table align="center">
   <tr>
-    <td colspan="3" align="center"><input type="button" value="Back" class="number_button" onClick="location.href = 'index.html';" style="width:200px;
-height:70px;"></td></tr><tr>
+    <td colspan="3" ><input type="button" value="Back" class="number_button" onClick="location.href = 'index.html';" style="width:200px;
+height:70px;"></td></tr><tr><td><p id="demo"></p> </td>
     </tr>
-    <ol id="retrive()">
-</ol>
-</table>
+    </table>
+    <ol id="leaderboard">
+	</ol>
+
 </div>
 </body>
+<script>
+function showScore(){
+	if(localStorage.getItem("employees")){
+		var a = localStorage.getItem("employees");
+		a =JSON.parse(a);
+
+		// Sort array
+		a.sort(function(aa,bb){
+                            return bb.score - aa.score;
+                        });
 
 
+		var html = '';
+		for(var i=0; i<a.length; i++){
+			html+='<li>'+ a[i].name + ' ' + a[i].score + '</li>';
+		}
+		document.getElementById('leaderboard').innerHTML=html;
+	}
+
+}
+
+
+
+</script>
 </html>

@@ -1,32 +1,61 @@
 <!-- Begin
 <!--START OF TIMER SCRIPT-->
 //how much time they get
-var time=45;
+var time=5;
 var timesup=0;
 var started=0;
 function CountDown() {
-if(time>0)
-{document.math.timer.value=time;
-time=time-1;
-var gameTimer=setTimeout("CountDown()", 1000)}
-else if (time==0)
-{document.math.timer.value="0";
-timesup=1;
-//alert('Time\'s Up! Youre Score is:' );
-document.math.firstnum.value="";
-document.math.operator.value="";
-document.math.secondnum.value="";
-document.math.answer.value="";
+  if(time>0)
+  {document.math.timer.value=time;
+  time=time-1;
+  var gameTimer=setTimeout("CountDown()", 1000)}
+  else if (time==0)
+  {document.math.timer.value="0";
+  timesup=1;
+  //alert('Time\'s Up! Youre Score is:' );
+  document.math.firstnum.value="";
+  document.math.operator.value="";
+  document.math.secondnum.value="";
+  document.math.answer.value="";
 
-var sp = document.getElementById("sp").value;
-alert('Time\'s Up! Youre Score is: ' + sp);
-//saveScore(sp);
-sp [1] = prompt("New score");
-localStorage["sp"] = JSON.stringfy(sp);
+   sp [0] = document.getElementById("sp").value;
+  alert('Time\'s Up! Youre Score is: ' + sp [0]);
+  //saveScore(sp);
+  sp [1] = prompt("New score");
 
-var storedscore = JSON.prase(localStorage['sp']);
-} 
+
+  // var stringify = require('json-stringify-safe');
+  // localStorage["sp1"] = JSON.stringfy(sp);
+
+  // var storedscore = JSON.prase(localStorage['sp']);
+
+  alert(sp[0] + " " + sp [1]);
+
+  // SAVE SCORE
+  var employee = {
+    name:sp [1],
+    score:sp[0]
+  }
+  // If has result on localstorage
+  if(localStorage.getItem('employees')){
+    var a = localStorage.getItem("employees");
+    var arr = JSON.parse(a);
+    // Add current employee to leaderboard
+    arr.push(employee);
+    localStorage.setItem('employees',JSON.stringify(arr));
+  } else {
+    var arr=[];
+    arr.push(employee);
+    localStorage.setItem('employees',JSON.stringify(arr));
+  }
+
+  //END SAVE SCORE
+  
+
+  } 
 }
+
+
 
 <!--END OF TIMER SCRIPT-->
 
