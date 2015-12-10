@@ -15,7 +15,7 @@
     <author href="http://phonegap.com" email="support@phonegap.com">
        Bashkim Bekteshi bb19500@seeu.edu.mk
     </author>
-<icon src="www/img/math.jpg" />
+<icon src="img/math.jpg" />
 
     <!-- Define the main entry-point to the application -->
     <content src="index.html" />
